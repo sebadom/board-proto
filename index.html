@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      .chart {
+        height: 100%;
+        width: 100%;
+      }
+      .board {
+        height: 400px;
+        width: 100%;
+        position: relative;
+      }
+      .timeline .axis line {
+        stroke: #000;
+      }
+      .timeline-background {
+        fill: #ddd;
+        width: 100%;
+      }
+      .time-zone-picker {
+        height: 40px;
+        background-color: grey;
+        width: 150px;
+        float: left;
+      }
+      .aircrafts-list {
+          position: absolute;
+          top: 40;
+          bottom: 0;
+          right: 0;
+          left: 0;
+      }
+      .aircraft-type {
+        border-bottom: 1px solid #0C0C0C;
+        padding: 5px 10px;
+      }
+      .aircrafts-list ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+      .aircrafts-list li {
+        background-color: #B1AFAF;
+        border-bottom: 1px solid #0C0C0C;
+      }
+      .aircrafts-list li .aircraft {
+        padding: 5px 10px;
+        background-color: #808080;
+        width: 150px;
+      }
+      .schedule-board {
+        position: absolute;
+        top: 0;
+        left: 150;
+        right: 0;
+        bottom: 0;
+      }
+      .leg {
+        fill: green;
+      }
+      .leg.repo-leg {
+        fill: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" onclick="addTask()">Add Task</button>
+    <button type="button" onclick="removeTask()">Remove Task</button>
+    <button type="button" onclick="changeTimeDomain('1hr')">1 HR</button>
+    <button type="button" onclick="changeTimeDomain('3hr')">3 HR</button>
+    <button type="button" onclick="changeTimeDomain('6hr')">6 HR</button>
+    <button type="button" onclick="changeTimeDomain('1day')">1 DAY</button>
+    <button type="button" onclick="changeTimeDomain('1week')">1 WEEK</button>
+    <div class="board">
+      <div class="time-zone-picker">UTC</div>
+      <div class="aircrafts-list"></div>
+      <div class="schedule-board"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="schedule-chart-d3.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
